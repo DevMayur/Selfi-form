@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta name="discription" content="Print your form is created by mayur sharma using html css and javascript">
+<title>Selfi_form by mayur</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<style>
+.wrapper{
+height:auto;
+width:600px;
+background-color:;
+border:3px solid red;
+margin:auto;
+padding:25px;
+background-color:#993300;
+border-top-left-radius:100px;
+border-bottom-right-radius:100px;
+color:white;
+box-shadow:5px 5px 10px black;
+}
+#head{
+font-size:35px;
+margin-top:0px;
+font-family:tahoma;
+}
+p{
+font-size:25px;
+}
+input,input[type=text],input[type=submit],select{
+font-size:20px;
+color:red;
+padding:5px;
+border-radius:25px;
+text-align:center;
+width:auto;
+font-weight:bold;
+box-shadow:0px 0px 20px #66FFFF;
+}
+#icon{
+font-size:70px;
+}
+#sbtn{
+width:200px;
+}
+#sbtn:hover{
+cursor:pointer;
+}
+.canvas{
+border-top-left-radius:50px;
+border-bottom-right-radius:50px;
+border:2px dashed white;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="canvas">
+<center><h3 id="head">Take Selfi <i id="icon" class="fa fa-camera-retro"></i> of your Form</h3></center>
+<form method="post" name="myform">
+<center>
+<p>What is your name. Please ? </p>
+<input type="text" autocomplete="off" value="Mayur" id="name" name="name" placeholder="Your Name">
+<p>What is your favorite Color. Please ?</p>
+<select name="favorite" id="color" onchange="changecolor(this);">
+<option value="red"> Red</option>
+<option value="green"> Green </option>
+<option value="white">White</option>
+<option value="black">Black</option>
+<option value="yellow">Yellow</option>
+<option value="skyblue">Skyblue</option>
+<option value="pink">Pink</option>
+<option value="purple">purple</option>
+</select><br><br>
+<input type="button" id="sbtn" value="Submit" onclick="check(); return false"><br>
+<p>Submit the form, then i will show you . Your name and your favorite color.</p>
+
+</center>
+</form>
+<center>
+ <input type="text" id="n1" disabled>
+ <input type="text"	id="n2" disabled>
+ 
+ 
+ <p id="f1"></p>
+<p id="f2"></p>
+
+</center>
+</div>
+</div> 
+<script type="text/javascript">
+function check(){
+
+	<!-- document.getElementById('f1').innerHTML = document.myform.name.value; -->
+	<!-- document.getElementById('f2').innerHTML = document.myform.favorite.value; -->
+	
+	<!-- lower is inp field -->
+	
+	var name = document.getElementById("name").value;
+	document.getElementById("n1").value="Your name is " + name ;
+	var color = document.getElementById('color').value;
+	document.getElementById("n2").value="Your favorite color " + color ;
+	
+}
+function changecolor(color){
+document.getElementsByTagName('body')[0].style.backgroundColor= color.value;
+}
+
+</script>
+
+<script type="text/javascript"> 
+function random(n){ //random function is here 
+	return Math.floor(Math.random()*n)
+	}
+	function changeColor(){ //for text background
+		var p2 = document.getElementById('icon');
+	p2.style.color= 'rgb('+ random(255)+ ',' + random(255)+ ','+ random(255)+')';
+	/* p2.style.background ='rgb('+ random(255)+ ',' + random(255)+ ','+ random(255)+')'; */
+	
+	}
+
+	setInterval(changeColor,50);
+
+</script>
+
+
+</body>
+</html>
